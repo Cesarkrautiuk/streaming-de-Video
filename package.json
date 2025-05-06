@@ -16,6 +16,7 @@
     "dependencies": {
         "@uppy/core": "^4.4.4",
         "@uppy/dashboard": "^4.3.3",
+        "@uppy/locales": "^4.5.2",
         "@uppy/xhr-upload": "^4.3.3"
     }
 }

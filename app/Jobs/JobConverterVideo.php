@@ -44,7 +44,6 @@ class JobConverterVideo implements ShouldQueue
             'timeout' => 3600,
         ]);
 
-
         $video = $ffmpeg->open($videoCaminho);
 
         $formadoVideo = new X264('libmp3lame');
