@@ -38,5 +38,7 @@ class JobGerarMiniaturaCapa implements ShouldQueue
 
          $video->frame(TimeCode::fromSeconds(2))
          ->save(Storage::disk($disco)->path($caminhoMiniatura));
+
+
      }
 }

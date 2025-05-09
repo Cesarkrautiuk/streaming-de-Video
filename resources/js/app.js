@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
             maxNumberOfFiles: 1,
         },
     });
-    const titleInput = document.getElementById('video-title');
-    const descInput = document.getElementById('video-description');
+    const titleInput = document.getElementById('video-titulo');
+    const descInput = document.getElementById('video-descricao');
 
     titleInput?.addEventListener('input', (e) => {
-        uppy.setMeta({title: e.target.value});
+        uppy.setMeta({titulo: e.target.value});
     });
     descInput?.addEventListener('input', (e) => {
-        uppy.setMeta({description: e.target.value});
+        uppy.setMeta({descricao: e.target.value});
     });
 
     uppy.use(Dashboard, {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     uppy.use(XHRUpload, {
         endpoint: '/upload-video',
         fieldName: 'video',
-        allowedMetaFields: ['title', 'description'],
+        allowedMetaFields: ['titulo', 'descricao'],
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
         },
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     uppy.on('upload-success', (file, resp) => {
         document.getElementById('status').innerText =
             resp.body.message || 'Upload concluído em background.';
-        document.getElementById('video-title').value = '';
-        document.getElementById('video-description').value = '';
-        uppy.setMeta({title: '', description: ''});
+        document.getElementById('video-titulo').value = '';
+        document.getElementById('video-descricao').value = '';
+        uppy.setMeta({titulo: '', descricao: ''});
 
     });
 

@@ -2,9 +2,9 @@
 <html lang="pt-br" data-bs-theme="dark">
 <head>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
     <!-- Bootstrap 5 -->
     <link
@@ -33,8 +33,8 @@
                         <label for="video-title" class="form-label">Título</label>
                         <input
                             type="text"
-                            id="video-title"
-                            name="title"
+                            id="video-titulo"
+                            name="titulo"
                             class="form-control form-control-dark"
                             placeholder="Digite o título…"
                             required
@@ -43,8 +43,8 @@
                     <div class="col-12">
                         <label for="video-description" class="form-label">Descrição</label>
                         <textarea
-                            id="video-description"
-                            name="description"
+                            id="video-descricao"
+                            name="descricao"
                             class="form-control form-control-dark"
                             rows="3"
                             placeholder="Digite a descrição…"

@@ -51,7 +51,9 @@ class JobConverterVideo implements ShouldQueue
         $video->filters()->resize(new Dimension(1280, 720))->synchronize();
 
         $video->save($formadoVideo, Storage::disk($disco)->path($caminhoVideoConvertido));
-
+        
         JobGerarMiniaturaCapa::dispatch($caminhoVideoConvertido)->onQueue('miniatura');
+        Storage::disk($disco)->delete('uploads/' . basename($this->videoCaminho));
+
     }
 }
